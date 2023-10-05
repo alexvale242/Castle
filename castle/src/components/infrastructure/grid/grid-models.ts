@@ -3,8 +3,7 @@ export interface Grid {
 }
 
 export interface GridCell {
-    height: number;
-    width: number;
+    size: number;
     xPosition: number;
     yPosition: number;
 }

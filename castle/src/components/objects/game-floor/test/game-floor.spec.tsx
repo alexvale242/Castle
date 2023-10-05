@@ -10,7 +10,7 @@ describe('game-floor', () => {
     expect(page.root).toEqualHtml(`
       <game-floor>
         <mock:shadow-root>
-          <slot></slot>
+          <div class="floor"></div>
         </mock:shadow-root>
       </game-floor>
     `);
