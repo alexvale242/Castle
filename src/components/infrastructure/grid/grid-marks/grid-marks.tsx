@@ -43,7 +43,9 @@ export class GridMarks {
     render() {
         return (
             <Host>
-                <div class="grid-marks"></div>
+                <div class="grid-marks">
+                    <grid-mark cellSize={1} xPosition={1} yPosition={1}></grid-mark>
+                </div>
             </Host>
         );
     }

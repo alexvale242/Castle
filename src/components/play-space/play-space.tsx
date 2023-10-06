@@ -12,7 +12,6 @@ export class PlaySpace {
       <Host>
         <section class="play-space">
             <grid-marks></grid-marks>
-            <game-floor></game-floor>
         </section>
       </Host>
     );

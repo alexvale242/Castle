@@ -8,6 +8,11 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface GameFloor {
     }
+    interface GridMark {
+        "cellSize": number;
+        "xPosition": number;
+        "yPosition": number;
+    }
     interface GridMarks {
     }
     interface MyComponent {
@@ -34,6 +39,12 @@ declare global {
         prototype: HTMLGameFloorElement;
         new (): HTMLGameFloorElement;
     };
+    interface HTMLGridMarkElement extends Components.GridMark, HTMLStencilElement {
+    }
+    var HTMLGridMarkElement: {
+        prototype: HTMLGridMarkElement;
+        new (): HTMLGridMarkElement;
+    };
     interface HTMLGridMarksElement extends Components.GridMarks, HTMLStencilElement {
     }
     var HTMLGridMarksElement: {
@@ -54,6 +65,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "game-floor": HTMLGameFloorElement;
+        "grid-mark": HTMLGridMarkElement;
         "grid-marks": HTMLGridMarksElement;
         "my-component": HTMLMyComponentElement;
         "play-space": HTMLPlaySpaceElement;
@@ -61,6 +73,11 @@ declare global {
 }
 declare namespace LocalJSX {
     interface GameFloor {
+    }
+    interface GridMark {
+        "cellSize"?: number;
+        "xPosition"?: number;
+        "yPosition"?: number;
     }
     interface GridMarks {
     }
@@ -82,6 +99,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "game-floor": GameFloor;
+        "grid-mark": GridMark;
         "grid-marks": GridMarks;
         "my-component": MyComponent;
         "play-space": PlaySpace;
@@ -92,6 +110,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "game-floor": LocalJSX.GameFloor & JSXBase.HTMLAttributes<HTMLGameFloorElement>;
+            "grid-mark": LocalJSX.GridMark & JSXBase.HTMLAttributes<HTMLGridMarkElement>;
             "grid-marks": LocalJSX.GridMarks & JSXBase.HTMLAttributes<HTMLGridMarksElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "play-space": LocalJSX.PlaySpace & JSXBase.HTMLAttributes<HTMLPlaySpaceElement>;
