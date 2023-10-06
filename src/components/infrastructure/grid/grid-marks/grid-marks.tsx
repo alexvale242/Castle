@@ -19,8 +19,14 @@ export class GridMarks {
     }
 
     public createGrid(): void {
-        const cell = this.createCell(0,0);
-        const gridCells = [cell];
+        const gridCells = [];
+
+        for (let i = 0; i < this.gridHeight; i += this.cellSize) {
+            for (let j = 0; j < this.gridWidth; j += this.cellSize) {
+                gridCells.push(this.createCell(i, j));
+            }
+        }
+
         this.grid = {
             gridCells: gridCells
         }
